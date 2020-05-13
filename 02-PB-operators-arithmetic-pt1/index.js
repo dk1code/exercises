@@ -18,7 +18,7 @@ console.log("5.2:", a / b);
 
 // 6.
 let c = 20;
-let resultTwo = a + b * c;
+let resultTwo = (a + b) * c;
 console.log("6:", resultTwo);
 
 // 7.

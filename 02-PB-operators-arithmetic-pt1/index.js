@@ -1,27 +1,44 @@
-var x = 2, y = 4;
+// 0:
+
+let x = 2, y = 4;
+
+// 1:
 
 console.log("1:", x + y);
+
+// 2:
+
 console.log("2:", x - y);
+
+// 3:
+
 console.log("3:", x * y);
+
+// 4:
+
 console.log("4:", x / y);
 
-// 5.
-var z = 10;
+// 5.1
 
-let resultOne = x * y / z;
-console.log(resultOne);
+let z = 10;
+
+const resultOne = x * y / z;
+console.log("5.1:", resultOne);
 
 // 5.2
+
 let a = 15;
 let b = 9;
 console.log("5.2:", a / b);
 
+
 // 6.
 let c = 20;
-let resultTwo = (a + b) * c;
+const resultTwo = (a + b) * c;
 console.log("6:", resultTwo);
 
 // 7.
+
 a++;
 console.log("7:", a);
 

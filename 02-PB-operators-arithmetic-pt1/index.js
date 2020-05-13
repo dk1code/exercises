@@ -39,13 +39,11 @@ console.log("6:", resultTwo);
 
 // 7.
 
-a++;
-console.log("7:", a);
+console.log("7:", ++a);
 
 // 8.
 
-b--;
-console.log("8:", b);
+console.log("8:", --b);
 
 // 9.
 

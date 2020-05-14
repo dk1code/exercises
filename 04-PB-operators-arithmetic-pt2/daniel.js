@@ -35,7 +35,7 @@ console.log("Q6:", 5 ** 2 + "cm²");
 let a = 5, b = 6, c = 7, s = null, A_Q7 = null, sHeron = null;
 s = (a + b + c) / 2;
 sHeron = s * (s - a) * (s - b) * (s - c);
-A_Q7 = Math.pow(sHeron, 1/2)
+A_Q7 = Math.sqrt(sHeron);
 
 
 console.log("Q7:", A_Q7.toFixed(2) + "cm²");

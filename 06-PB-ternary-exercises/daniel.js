@@ -17,10 +17,10 @@ console.log("3.", age < 16 ? "serve butter beer" : "serve beer");
 
 // 4.
 
-let isStudent;
+let isStudent = true;
 console.log("4.", isStudent ? "Ticket costs €5,00" : "Ticket costs €12,00");
 
 // 5.
 
-let okMarie;
+let okMarie = "cake";
 console.log("5.", okMarie === "cake" ? "Let them eat cake" : "Oh, bother");

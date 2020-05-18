@@ -2,25 +2,25 @@
 
 // 1.
 
-let isDog;
-console.log(isDog ? "1. pat,pat" : "1.", "find me a dog to pat!");
+let isDog = null;
+console.log("1.", isDog ? "pat,pat" : "find me a dog to pat!");
   
 // 2.
 
-let speedCheck;
-console.log(speedCheck >= 50 ? "2. You're going to fast!" : "2. You're driving below the speed limit, Oma!");
+let speedCheck = 321;
+console.log("2.", speedCheck >= 50 ? "You're going to fast!" : "You're driving below the speed limit, Oma!");
 
 // 3.
 
-let age;
-console.log(age < 16 ? "3. serve butter beer" : "3.", "serve beer");
+let age = 34;
+console.log("3.", age < 16 ? "serve butter beer" : "serve beer");
 
 // 4.
 
 let isStudent;
-console.log(isStudent ? "4. Ticket costs €5,00" : "4.", "Ticket costs €12,00");
+console.log("4.", isStudent ? "Ticket costs €5,00" : "Ticket costs €12,00");
 
 // 5.
 
 let okMarie;
-console.log(okMarie === "cake" ? "5. Let them eat cake" : "5.", "Oh, bother");
+console.log("5.", okMarie === "cake" ? "Let them eat cake" : "Oh, bother");

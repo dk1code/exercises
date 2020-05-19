@@ -63,7 +63,7 @@ console.log("Q9.3: " + "You give €" + tip(35.92, 20).toFixed(2) + ".");
 
 let times = [8, 6, 5, 9, 8, 2, 1, 8.5, 7, 4], sumTimes = 0;
 for (let i = 0; i < times.length; i++) {
-    sumTimes += parseFloat(times[i], 9);
+    sumTimes += parseFloat(times[i]);
 }
 
 console.log("Q10: On average Noemy worked " + sumTimes / times.length + "h a day.");

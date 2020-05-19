@@ -66,7 +66,7 @@ for (let i = 0; i < times.length; i++) {
     sumTimes += parseFloat(times[i], 9);
 }
 
-console.log("Q10: On average Noemy worked " + sumTimes / 9 + "h a day.");
+console.log("Q10: On average Noemy worked " + sumTimes / 10 + "h a day.");
 
 // Q11.
 
@@ -76,7 +76,7 @@ console.log("Q11: His score in the sixth test was: " + testSc + "%.");
 
 // Q12.
 
-let testSc2 = 80 * 9 / 78 * 8;
+let testSc2 = 80 * 9 - 78 * 8;
 
-console.log("Q12: James needs a minimum of " + testSc + "% to get an 80% average.");
+console.log("Q12: James needs a minimum of " + testSc2 + "% to get an 80% average.");
 

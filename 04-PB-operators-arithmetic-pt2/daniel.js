@@ -32,13 +32,13 @@ console.log("Q6:", 5 ** 2 + "cm²");
 // Q7.
 // calculation with Heronean Algorithm
 
-let a = 5, b = 6, c = 7, s = null, A_Q7 = null, sHeron = null;
-s = (a + b + c) / 2;
-sHeron = s * (s - a) * (s - b) * (s - c);
-A_Q7 = Math.sqrt(sHeron);
+let a = 5, b = 6, c = 7;
+let s = (a + b + c) / 2;
+let sHeron = s * (s - a) * (s - b) * (s - c);
+let answerQ7 = Math.sqrt(sHeron);
 
 
-console.log("Q7:", A_Q7.toFixed(2) + "cm²");
+console.log("Q7:", answerQ7.toFixed(2) + "cm²");
 
 // Q8.
 
@@ -66,7 +66,7 @@ for (let i = 0; i < times.length; i++) {
     sumTimes += parseFloat(times[i], 9);
 }
 
-console.log("Q10: On average Noemy worked " + sumTimes / 10 + "h a day.");
+console.log("Q10: On average Noemy worked " + sumTimes / times.length + "h a day.");
 
 // Q11.
 

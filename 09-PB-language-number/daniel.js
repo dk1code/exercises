@@ -6,6 +6,8 @@ let ageT1 = 35;
 let concatenateT1 = stringT1 + ageT1;
 console.log(`1. ${concatenateT1}`);
 
+/* This is a special case, since on of the var is a string. If this is the case, a number value get added as a string to the other string. The so called string accumulation or concatenation.*/
+
 // 2.
 
 let stringInt = "1005", stringFloat = "10.05";
@@ -18,11 +20,11 @@ let moduloA = a % 2;
 let moduloB = b % 2;
 let moduloC = c % 2;
 console.log(
-  `3.\n${a} is ${(moduloA = 0
+  `3.\n${a} is ${(moduloA === 0
     ? "an even number"
-    : "an odd number")}\n${b} is ${(moduloB = 0
+    : "an odd number")}\n${b} is ${(moduloB === 0
     ? "an even number"
-    : "an odd number")}\n${c} is ${(moduloC = 0
+    : "an odd number")}\n${c} is ${(moduloC === 0
     ? "an even number"
     : "an odd number")}`
 );

@@ -12,22 +12,22 @@ console.log("\n1b: The HIGHEST number between -1 and 4 is", Math.max(-1, 0, 1, 2
 
 // 2
 
-const ARRAYone = [3321.32321, 326.76, 76788.7, -9.78, 43.342];
-const ARRAYtwo = [3321.32321, 326.76, 76788.7, -9.78, 28.329];
+const ARRAY_ONE = [3321.32321, 326.76, 76788.7, -9.78, 43.342];
+const ARRAY_TWO = [3321.32321, 326.76, 76788.7, -9.78, 28.329];
 // not sure if the naming is against best practices
 
 // 2.a
 
 console.log("2a:\n")
-for (let i = 0; i < ARRAYone.length; i++) {
-    console.log(`${ARRAYone[i]} is rounded up ${Math.ceil(ARRAYone[i])}`)
+for (let i = 0; i < ARRAY_ONE.length; i++) {
+  console.log(`${ARRAY_ONE[i]} is rounded up ${Math.ceil(ARRAY_ONE[i])}`);
 }
 
 // 2.b
 
 console.log("\n2b:\n");
-for (let i = 0; i < ARRAYtwo.length; i++) {
-  console.log(`${ARRAYtwo[i]} is rounded down ${Math.floor(ARRAYtwo[i])}`);
+for (let i = 0; i < ARRAY_TWO.length; i++) {
+  console.log(`${ARRAY_TWO[i]} is rounded down ${Math.floor(ARRAY_TWO[i])}`);
 }
 
 // 3.

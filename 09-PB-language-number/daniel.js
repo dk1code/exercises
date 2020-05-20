@@ -20,11 +20,14 @@ let moduloA = a % 2;
 let moduloB = b % 2;
 let moduloC = c % 2;
 console.log(
-  `3.\n${a} is ${(moduloA === 0
+    `3.
+${a} is ${(moduloA === 0
     ? "an even number"
-    : "an odd number")}\n${b} is ${(moduloB === 0
+        : "an odd number")}
+${b} is ${(moduloB === 0
     ? "an even number"
-    : "an odd number")}\n${c} is ${(moduloC === 0
+        : "an odd number")}
+${c} is ${(moduloC === 0
     ? "an even number"
     : "an odd number")}`
 );

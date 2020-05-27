@@ -32,9 +32,9 @@ console.log(`4: Is Mark's BMI higher then John's: It is ${!isBmiHigher ? "not" :
 // 5.
 
 if (bmiMark > bmiJohn) {
-    console.log(`5: ${VALUES_MARK[0]}`)
+    console.log(`5: ${VALUES_MARK[0]} has BMI of ${bmiMark}`)
 }
 
 else {
-    console.log(`5: ${VALUES_JOHN[0]}`)
+    console.log(`5: ${VALUES_JOHN[0]} has BMI of ${bmiJohn}`);
 }

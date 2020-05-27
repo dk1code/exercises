@@ -62,7 +62,7 @@ function functionFour(x) {
   }
   else {
     x = "Py" + x;
-    if (x.includes("Py") === true) {
+    if (x.startsWith("Py") === true) {
       return x.substring(2);
     }
   }
@@ -74,8 +74,6 @@ console.log("ExampleString:", functionFour("ExampleString")); // ExampleString: 
 console.log("Empty string:", functionFour("")); // Empty string: 
 
 // 5.
-
-/* For this task I would have needed a two global vars - A hint that we are supposed to declared them globally would have been better. */
 
 function functionFive(x, y) {
   if (x + y >= 50 && x + y <= 80) {
@@ -94,7 +92,7 @@ console.log("40, 50:", functionFive(40, 50)); // 40, 50: 80
 // 6.
 
 function functionSix(x, y) {
-  if (x + y === 8 || Math.abs(x - y === 8) || x - y === -8) {
+  if (x + y === 8 || Math.abs(x - y === 8)) {
     return true;
   }
 
@@ -150,11 +148,12 @@ console.log("0, 11:", functionEight(0, 11));
 // 9.
 
 function functionNine(x, y) {
+  let sum = x + y;
   if (x === y) {
-    return (x + y) * 3;
+    return sum * 3;
   }
   else {
-    return x + y;
+    return sum;
   }
 }
 
@@ -166,11 +165,12 @@ console.log("5, 7:", functionNine(5, 7)); // 5, 7: 12
 
 function functionTen(x) {
   let y = 19;
-  if (Math.abs(x - y) > 19) {
+  let diff = x - y;
+  if (Math.abs(diff) > 19) {
     return Math.abs(x - y) * 2;
   }
   else {
-    return Math.abs(x - y);
+    return Math.abs(diff);
   }
 }
 

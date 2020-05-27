@@ -181,7 +181,7 @@ console.log("18:", functionTen(18)); // 18: 1
 // 11. ***Bonus***
 
 function functionEleven(firstName, age) {
-  if (typeof (firstName) !== "String" || typeof (age) !== "number" || age < 0) {
+  if (typeof(firstName) !== "string" || typeof (age) !== "number" || age < 0) {
     return "check your input";
   }
 
@@ -200,9 +200,13 @@ function functionEleven(firstName, age) {
   }
 
   else {
-    return "Hi there, Methusalem!"
+    return "Hi there, Methuselah!";
   }
 }
+
+console.log("\n11. ***Bonus***")
+console.log(functionEleven("Daniel", 35)); // Daniel is an adult at the age 35
+console.log(functionEleven("Enoch", 365)); // Hi there, Methuselah!
 
 // 12. ***Bonus***
 

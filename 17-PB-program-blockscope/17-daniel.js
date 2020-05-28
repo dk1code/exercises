@@ -2,7 +2,12 @@
 
 // 1.
 
-let determiner = -5;
+let determiner = Math.random() * 9 + 1;
+determiner = parseInt(determiner);
+let negativ = Math.random();
+
+negativ < 0.5 ? determiner = determiner * -1 : "";
+console.log(`var determiner is ${determiner}`)
 
 {
   let x = null;

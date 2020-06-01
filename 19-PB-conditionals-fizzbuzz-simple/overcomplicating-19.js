@@ -1,6 +1,6 @@
 "use strict";
 
-let jsonObj = { name: "PB Exercise 19", version: "0.3.1", addinfo: "Establishing an interface: 1st try with readline module --> Works but can't be used during runs" };
+let jsonObj = { name: "PB Exercise 19", version: "0.3.2", addinfo: "Establishing an interface: 1st try with addListener() --> Not the required result. Works all the time, only" };
 
 console.log("**********************************************************************************\n");
 console.log(
@@ -15,18 +15,12 @@ console.log(
   "\n**********************************************************************************\n"
 );
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+let stdin = process.openStdin();
 
-let isRunning = true, inputVar = "";
+let isRunning = true, inputVar = null;
 while (isRunning === true) {
     
-    readline.question(`Please, give an input!`, (input) => {
-        inputVar = input;
-     readline.close();
-   });
+  stdin.addListener("data", function (d) { inputVar = d });
     console.log(`\n\nThis was your input:${inputVar}`);
     isRunning = false;
 }

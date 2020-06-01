@@ -1,6 +1,6 @@
 "use strict";
 
-let jsonObj = { name: "PB Exercise 19", version: "0.2", addinfo: "This ist to tryout while-loop" };
+let jsonObj = { name: "PB Exercise 19", version: "0.3.1", addinfo: "Establishing an interface: 1st try with readline module --> Works but can't be used during runs" };
 
 console.log("**********************************************************************************\n");
 console.log(
@@ -15,13 +15,18 @@ console.log(
   "\n**********************************************************************************\n"
 );
 
-let isRunning = true, i =0;
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+let isRunning = true, inputVar = "";
 while (isRunning === true) {
     
-    if (i < 10 === true) {
-        console.log(`This is run: ${i + 1}`);
-    } else {
-        isRunning = false;
-    }
-    i++;
+    readline.question(`Please, give an input!`, (input) => {
+        inputVar = input;
+     readline.close();
+   });
+    console.log(`\n\nThis was your input:${inputVar}`);
+    isRunning = false;
 }

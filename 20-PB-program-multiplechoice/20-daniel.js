@@ -17,13 +17,14 @@ switch (inputColor) {
     break;
   case "yellow":
     console.log("1:", "\x1b[33mThis is yellow\x1b[0m");
-    break; // unnecessary
-  // no default needed in this configuration
+    break;
+  default:
+    console.log("Error");
 }
 
 // 2. *** Create a switch statement that prints different comments depending on a grade.
 
-let gradeGenerator = Math.round(Math.random() * 5 + 1);
+let gradeGenerator = Math.ceil(Math.random() * 5 + 0.5);
 
 switch (gradeGenerator) {
   case 1:
@@ -44,6 +45,8 @@ switch (gradeGenerator) {
   case 6:
     console.log(`\n2: A ${gradeGenerator} is 'ungenügend'`);
     break;
+  default:
+    console.log("***ERROR***");
 }
 
 // 3. *** Create a switch statement that prints different statement for various fruit (e.g. banana, orange, strawberry, apple).
@@ -58,6 +61,9 @@ switch (fruitVar) {
   case "banana":
   case "orange":
     console.log(`\n3. ${fruitVar}s don't grow in Germany.`);
+    break;
+  default:
+    console.log("***ERROR***");
 }
 
 // 4 ***
@@ -72,32 +78,34 @@ let percentExpr = null;
 
 if (percentVar < 30) {
   percentExpr = "bellow30";
-} else if (percentVar >= 30 && percentVar < 51) {
+} else if (percentVar < 51) {
   percentExpr = "bellow51";
-} else if (percentVar >= 51 && percentVar < 81) {
+} else if (percentVar < 81) {
   percentExpr = "bellow81";
-} else if (percentVar >= 81 && percentVar < 100) {
+} else if (percentVar < 100) {
   percentExpr = "bellow100";
 } else {
   percentExpr = "exact100";
 }
 
 switch (percentExpr) {
-    case "bellow30":
-        console.log("\n4:", "Still a long way to go");
-        break;
-    case "bellow51":
-        console.log("\n4:", "Slowly getting there");
-        break;
-    case "bellow81":
-        console.log("\n4:", "You can do it!");
-        break;
-    case "bellow100":
-        console.log("\n4:", "This is the last push!");
-        break;
-    case "exact100":
-        console.log("\n4:", "You're there. Well done!");
-        break;
+  case "bellow30":
+    console.log("\n4:", "Still a long way to go");
+    break;
+  case "bellow51":
+    console.log("\n4:", "Slowly getting there");
+    break;
+  case "bellow81":
+    console.log("\n4:", "You can do it!");
+    break;
+  case "bellow100":
+    console.log("\n4:", "This is the last push!");
+    break;
+  case "exact100":
+    console.log("\n4:", "You're there. Well done!");
+    break;
+  default:
+    console.log("*** ERROR ***");
 }
 
 // 5. *** When should you use a switch statement versus an if else statement. Comment your answer in your js file.

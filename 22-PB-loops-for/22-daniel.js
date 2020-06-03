@@ -17,15 +17,7 @@ for (let i = 1; i < 6; i++) {
 // 3. ***
 console.log("\n3.");
 for (let i = 0; i < 21; i++) {
-  if (i === 0) {
-    console.log(`${i} is neither odd or even`);
-  } else if (i % 2 !== 0) {
-    console.log(`${i} is odd`);
-  } else if (i % 2 === 0) {
-    console.log(`${i} is even`);
-  } else {
-    console.log("*** ERROR ***");
-  }
+    console.log(`${i} is ${i % 2 === 0 ? "even" : "odd"}`);
 }
 
 // 4. ***
@@ -45,14 +37,14 @@ for (let i = 1; i < 101; i++) {
   } else if (i % 5 === 0) {
     console.log(`for ${i}: Buzz`);
   } else {
-    console.log("");
+    console.log(i);
   }
 }
 
 // 6. ***
 console.log("\n6.");
 sumI = null;
-for (let i = 1; i < 1001; i++) {
+for (let i = 1; i < 1000; i++) {
   if (i % 3 === 0 || i % 5 === 0) {
     sumI += i;
   }

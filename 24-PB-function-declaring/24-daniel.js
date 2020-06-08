@@ -20,6 +20,16 @@ const MULIPL_FUNC = (x = 0, y = 1) => {
 
 // 4. *** reate functions (using all three declarations) to check the remainder of division given two numbers.
 
+
+function divFunction(x = 0, y = 1) {
+  console.log(x / y);
+}
+
+const DIV_FUNC_ANON = function (x = 0, y = 1) {
+  console.log(x / y);
+}
+
+
 const DIV_FUNC = (x = 0, y = 1) => {
   console.log(x / y);
 };

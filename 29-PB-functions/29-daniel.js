@@ -138,13 +138,13 @@ const primeNumCheck = (inputInt) => {
 
   let primeNum = "";
 
-  for (let i = 1; i <= inputInt; i++) {
+  for (let i = 2; i <= inputInt; i++) {
     let isPrime = true;
     let isRunning = true;
-    let ii = 1;
+    let ii = 2;
 
     while (isRunning === true) {
-      if (i % ii === 0 && ii !== 1 && i !== ii) {
+      if (i % ii === 0 && i !== ii) {
         isPrime = false;
         isRunning = false;
       } else if (isRunning === true && ii < i) {
@@ -158,11 +158,11 @@ const primeNumCheck = (inputInt) => {
       primeNum += " " + i;
     }
   }
-  return `All the Prime Numbers between 1 and ${inputInt} are: ${primeNum}`;
+  return `All the Prime Numbers between 2 and ${inputInt} are: ${primeNum}`;
 };
 
 console.log("\n12:");
-console.log(primeNumCheck(30));
+console.log(primeNumCheck(100000));
 
 // 13.
 
@@ -172,18 +172,17 @@ const validateEMail = (string) => {
   let atPos = 0;
   let dotPos = 0;
 
-  if (string[0] !== "@") {
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] === "@") {
-        countAt++;
-        atPos = i;
-      }
-      if (string[i] === ".") {
-        dotPos = i;
-      }
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "@") {
+      countAt++;
+      atPos = i;
+    }
+    if (string[i] === ".") {
+      dotPos = i;
     }
   }
-  if (string[0] === "@" || atPos >= dotPos) {
+
+  if (string[0] === "@" || countAt !== 1 || atPos > dotPos) {
     isAsRequired = false;
   }
 
@@ -195,3 +194,4 @@ console.log(validateEMail("john@example.com"));
 console.log(validateEMail("@example.com"));
 console.log(validateEMail("john.smith@com"));
 console.log(validateEMail("john.smith@email.com"));
+console.log(validateEMail("johnsmith@emailcom"));

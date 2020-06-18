@@ -2,7 +2,7 @@
 
 // 1.
 
-const euroCities = ["Paris", "London", "Valetta", "Praguw", "Rome"];
+const euroCities = ["Paris", "London", "Valetta", "Prague", "Rome"];
 console.log("1a:", euroCities);
 let secondItem = euroCities[1];
 console.log("1b:", secondItem);
@@ -43,5 +43,33 @@ console.log("8:", arraySlice);
 
 // 9. 
 
+const worldCities = asianCities.concat(euroCities);
+console.log("9.", worldCities);
+
+// 10.
+
 asianCities.reverse();
-console.log("9:", asianCities);
+console.log("10:", asianCities);
+
+// 11.
+
+worldCities.splice(2, 1, "Toronto");
+console.log("11:", worldCities);
+
+// 12.
+
+worldCities.splice(1, 0, "Washington");
+console.log("12:", worldCities);
+
+// 13.
+
+console.log("13 - join():", worldCities.join(" + "));
+
+const stringFunc = array => {
+    let output = "";
+    for (let i = array.length; i > 0; i--) {
+        output += array[i - 1] + ", ";
+    }
+    return output;
+}
+console.log("13 - loop:", stringFunc(worldCities));

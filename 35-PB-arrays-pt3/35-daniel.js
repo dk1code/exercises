@@ -295,7 +295,7 @@ const pigLatin = string => {
         runArray.splice(i, 1, wordArray.join(""));
     }
     output = runArray.join(" ");
-    output.replace(".", "") + ".";
+    output = output.replace(".", "") + ".";
     output = output.split("");
     output.splice(0, 1, output[0].toUpperCase());
     output = output.join("");

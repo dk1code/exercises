@@ -286,17 +286,13 @@ const pigLatin = string => {
                 isBeginningVowel = true;
         }
 
-        switch (wordArray.length > 2) {
-            case true:
+        if (wordArray.length > 2 && wordArray[1] !== "x") {
                 wordArray.push(wordArray[0]);
                 wordArray.splice(0, 1);
         }
 
-        if (isBeginningVowel === true) {
-            wordArray.push("way");
-        } else {
-            wordArray.push("ay");
-        }
+        isBeginningVowel ? wordArray.push("way") : wordArray.push("ay");
+        
         runArray.splice(i, 1, wordArray.join(""));
     }
     output = runArray.join(" ");

@@ -277,8 +277,13 @@ const pigLatin = string => {
         wordArray = runArray[i].split("");
         isBeginningVowel = false;
 
-        if (wordArray[0] === "a" || wordArray[0] === "e" || wordArray[0] === "i" || wordArray[0] === "o" || wordArray[0] === "u") {
-            isBeginningVowel = true;
+        switch (wordArray[0]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+                isBeginningVowel = true;
         }
 
         switch (wordArray.length > 2) {

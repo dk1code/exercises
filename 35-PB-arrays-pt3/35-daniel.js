@@ -22,32 +22,8 @@ console.log(isFourLetters(["Dog", "Cat", "Deer"]));
 console.log("\n2:")
 
 const monthName = number => {
-    switch (number) {
-        case 1:
-            return "January";
-        case 2:
-            return "February";
-        case 3:
-            return "March";
-        case 4:
-            return "April";
-        case 5:
-            return "May";
-        case 6:
-            return "June";
-        case 7:
-            return "July";
-        case 8:
-            return "August";
-        case 9:
-            return "September";
-        case 10:
-            return "October";
-        case 11:
-            return "November";
-        case 12:
-            return "December";
-    }
+    const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return monthArray[number - 1];
 }
 
 console.log(monthName(3));
@@ -75,12 +51,16 @@ console.log(amplify(25));
 
 console.log("\n4:");
 
+/* to complex solution */
 const unique = array => {
     const runArray = [];
     for (let i = 0; i < array.length; i++) {
         runArray.splice(0, array.length);
-        for (let ii = 0; ii < array.length; ii++) {
-            array[i] === array[ii] ? runArray.push(array[i]) : "";
+        for (let j = 0; j < array.length; j++) {
+            array[i] === array[j] ? runArray.push(array[i]) : "";
+            if (runArray.length > 1) {
+                break;
+            }
         }
         if (runArray.length === 1) {
             return array[i];
@@ -88,9 +68,21 @@ const unique = array => {
     }
 }
 
+
+// const unique = array => {
+//     let iterValue = null;
+//     for (let i = 0; i < array.length; i++) {
+//         iterValue = array[i];
+//         if (array.indexOf(iterValue) === array.lastIndexOf(iterValue)) {
+//             return iterValue;
+//         }
+//     }
+// }
+
 console.log(unique([3, 3, 3, 7, 3, 3]));
 console.log(unique([0, 0, 0.77, 0, 0]));
 console.log(unique([0, 1, 1, 1, 1, 1, 1, 1]));
+console.log(unique([1, 1, 1, 1, 1, 1, 0]));
 
 // 5.
 
@@ -98,6 +90,7 @@ console.log("\n5:");
 
 const wordRank = string => {
     const wordArray = string.split(" ");
+    const letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let highestValue = 0;
     let highestPosition = 0;
     let word = "";
@@ -108,86 +101,7 @@ const wordRank = string => {
         word = wordArray[i];
 
         for (let ii = 0; ii < word.length; ii++) {
-            switch (word[ii]) {
-                case "a":
-                    wordValue += 1;
-                    break;
-                case "b":
-                    wordValue += 2;
-                    break;
-                case "c":
-                    wordValue += 3;
-                    break;
-                case "d":
-                    wordValue += 4;
-                    break;
-                case "e":
-                    wordValue += 5;
-                    break;
-                case "f":
-                    wordValue += 6;
-                    break;
-                case "g":
-                    wordValue += 7;
-                    break;
-                case "h":
-                    wordValue += 8;
-                    break;
-                case "i":
-                    wordValue += 9;
-                    break;
-                case "j":
-                    wordValue += 10;
-                    break;
-                case "k":
-                    wordValue += 11;
-                    break;
-                case "l":
-                    wordValue += 12;
-                    break;
-                case "m":
-                    wordValue += 13;
-                    break;
-                case "n":
-                    wordValue += 14;
-                    break;
-                case "o":
-                    wordValue += 15;
-                    break;
-                case "p":
-                    wordValue += 16;
-                    break;
-                case "q":
-                    wordValue += 17;
-                    break;
-                case "r":
-                    wordValue += 18;
-                    break;
-                case "s":
-                    wordValue += 19;
-                    break;
-                case "t":
-                    wordValue += 20;
-                    break;
-                case "u":
-                    wordValue += 21;
-                    break;
-                case "v":
-                    wordValue += 22;
-                    break;
-                case "w":
-                    wordValue += 23;
-                    break;
-                case "x":
-                    wordValue += 24;
-                    break;
-                case "y":
-                    wordValue += 25;
-                    break;
-                case "z":
-                    wordValue += 26;
-                    break;
-            }
+            wordValue += letterArray.indexOf(word[ii]) + 1;
         }
         if (wordValue > highestValue) {
             highestValue = wordValue;
@@ -208,9 +122,9 @@ console.log("\n6:0");
 
 const hackerSpeak = string => {
     let funcString = string
-    const replaceArray = [null, /a/gi, "4", /e/gi, "3", /i/gi, "i", /o/gi, "0", /s/gi, "5"];
+    const replaceArray = [/a/gi, "4", /e/gi, "3", /i/gi, "i", /o/gi, "0", /s/gi, "5"];
 
-    for (let i = 1; i <= 9; i = i + 2) {
+    for (let i = 0; i <= 8; i += 2) {
         funcString = funcString.replace(replaceArray[i], replaceArray[i + 1]);
     }
     return funcString;
@@ -287,12 +201,12 @@ const pigLatin = string => {
         }
 
         if (wordArray.length > 2 && wordArray[1] !== "x") {
-                wordArray.push(wordArray[0]);
-                wordArray.splice(0, 1);
+            wordArray.push(wordArray[0]);
+            wordArray.splice(0, 1);
         }
 
         isBeginningVowel ? wordArray.push("way") : wordArray.push("ay");
-        
+
         runArray.splice(i, 1, wordArray.join(""));
     }
     output = runArray.join(" ");

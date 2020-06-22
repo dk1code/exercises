@@ -85,6 +85,13 @@ const missingNums = array => {
     }
 }
 
+// const missingNums = (x) => {
+
+//     let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//     let result = myArr.filter(s => !x.includes(s));
+//     return result[0];
+// }
+
 console.log(missingNums([1, 2, 3, 4, 6, 7, 8, 9, 10]));
 console.log(missingNums([7, 2, 3, 6, 5, 9, 1, 4, 8]));
 console.log(missingNums([10, 5, 1, 2, 4, 6, 8, 3, 9]));
@@ -114,7 +121,7 @@ const dictionary = (string, array) => {
     let outputArray = [];
 
     for (let i = 0; i < array.length; i++){
-        array[i].includes(string) ? outputArray.push(array[i]) : "";
+        array[i].startsWith(string) ? outputArray.push(array[i]) : "";
     }
     return outputArray;
 }
@@ -130,8 +137,8 @@ console.log("\n8:");
 const evenNums = number => {
     const outputArray = [];
 
-    for (let i = 1; i <= number; i++) {
-        i % 2 === 0 ? outputArray.push(i) : "";
+    for (let i = 2; i <= number; i += 2) {
+        outputArray.push(i);
     }
     return outputArray;
 }

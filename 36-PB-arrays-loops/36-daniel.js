@@ -19,7 +19,7 @@ const sumOfNumbers = array => {
 
 console.log("\n2:");
 
-const NAME_ARRAY = ["pei", "Andrea", "Filippo", "edgar"];
+const NAME_ARRAY = ["Pei", "Andrea", "Filippo", "Edgar"];
 
 const greetings = array => {
     const runArray = array;
@@ -84,7 +84,7 @@ const capitalize = array => {
         runArray[i] = runArray[i].toLowerCase();
         runItem = runArray[i].split("");
         runItem.splice(0, 1, runItem[0].toUpperCase());
-        runArray.splice(i, 1, runItem.join("")); 
+        runArray.splice(i, 1, runItem.join(""));
     }
     return runArray;
 }
@@ -125,3 +125,32 @@ const repeatIt = (item, times = 1) => {
 }
 
 console.log(repeatIt("example", 3)); //➞["example", "example", "example"]
+
+// BONUS
+
+console.log("\nBonus Task:")
+
+const isFactor = array => {
+    let isProduct = null;
+
+    for (let i = 1; i < array.length; i++) {
+        isProduct = false;
+
+        for (let j = 1; j <= 10; j++) {
+            switch (array[i] / j === array[i - 1]) {
+                case true:
+                    isProduct = true;
+                    break;
+            }
+        }
+        if (isProduct === false) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isFactor([1, 2, 4, 8, 16, 32])); //➞ true
+console.log(isFactor([1, 1, 1, 1, 1, 1])); //➞ true
+console.log(isFactor([2, 4, 6, 7, 12])); //➞ false
+console.log(isFactor([10, 1])); //➞ false

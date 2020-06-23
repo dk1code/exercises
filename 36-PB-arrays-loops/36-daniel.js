@@ -7,13 +7,21 @@ const sumOfNumbers = array => {
     let runSum = 0;
     let runProduct = 1;
 
-    for (let i = 0; i < runArray.length; i++) {
-        runSum += runArray[i];
-        runProduct *= runArray[i];
+    // for (let i = 0; i < runArray.length; i++) {
+        // runSum += runArray[i];
+        // runProduct *= runArray[i];
+    // }
+
+    for (let item of runArray) {
+        runSum += item;
+        runProduct *= item;
     }
     console.log(runSum);
     console.log(runProduct);
 }
+
+console.log(sumOfNumbers([3, 5, 2, 4])); // 14 && 120
+console.log(sumOfNumbers([6, 9, 10, 20])); // 45 && 10800
 
 // 2.
 
@@ -55,17 +63,21 @@ console.log(concatFunc(CITY_ARRAY));
 console.log("\n4:");
 
 const numberChange = array => {
-    const runArray = array;
+    // const runArray = array;
 
-    for (let i = 0; i < runArray.length; i++) {
-        switch (runArray[i] % 2 !== 0) {
-            case true:
-                runArray[i]++;
-                break;
-            case false:
-                runArray[i]--;
-        }
-    }
+    // for (let i = 0; i < runArray.length; i++) {
+    //     switch (runArray[i] % 2 !== 0) {
+    //         case true:
+    //             runArray[i]++;
+    //             break;
+    //         case false:
+    //             runArray[i]--;
+    //     }
+    // }
+    for (let item of array) {
+        item % 2 !== 0 ? item++ : item--;
+}
+
     return runArray;
 }
 
@@ -100,8 +112,13 @@ console.log("\n6:");
 const noDublicates = array => {
     const OUTPUT_ARRAY = [];
 
+    // for (let i = 0; i < array.length; i++) {
+    //     OUTPUT_ARRAY.indexOf(array[i]) === -1 ? OUTPUT_ARRAY.push(array[i]) : "";
+    // }
+    // return OUTPUT_ARRAY;
+
     for (let i = 0; i < array.length; i++) {
-        OUTPUT_ARRAY.indexOf(array[i]) === -1 ? OUTPUT_ARRAY.push(array[i]) : "";
+        array.indexOf(array[i]) === i ? OUTPUT_ARRAY.push(array[i]) : "";
     }
     return OUTPUT_ARRAY;
 }
@@ -125,6 +142,7 @@ const repeatIt = (item, times = 1) => {
 }
 
 console.log(repeatIt("example", 3)); //➞["example", "example", "example"]
+console.log(repeatIt("nothing", 0)); //➞[]
 
 // BONUS
 

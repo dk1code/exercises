@@ -18,15 +18,23 @@ console.log("\n2:");
 
 const OBJECT_ARRAY = [ { tile: "N", score: 1 }, { tile: "K", score: 5 }, { tile: "Z", score: 10 }, { tile: "X", score: 8 }, { tile: "D", score: 2 }, { tile: "A", score: 1 }, { tile: "E", score: 1 } ]
 
+// const scrabble = array => {
+//     let maxScore = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         maxScore += array[i].score;
+//     }
+//     return maxScore;
+// }
+
 const scrabble = array => {
     let maxScore = 0;
-    for (let i = 0; i < array.length; i++) {
-        maxScore += array[i].score;
+    for (let item of array) {
+        maxScore += array.score;
     }
     return maxScore;
 }
 
-console.log(scrabble(OBJECT_ARRAY));
+console.log(scrabble(OBJECT_ARRAY)); // NaN
 
 // 3.
 
@@ -42,7 +50,7 @@ console.log(isEmptyObject({ a: 1 })); // ➞ false
 
 console.log("\n4:");
 
-// solution out of my head
+// solution out of my head; rediculous runtime!
 
 // const countLetters = string => {
 //     let runArray = string.split("");
@@ -61,16 +69,27 @@ console.log("\n4:");
 
 // proper solution; cheers to vasilis
 
-const countingLetters = (str) => {
-    const obj = {};
-    for (let i = 0; i < str.length; i++) {
-        obj[str[i]] = str.split(str[i]).length - 1;
-    }
-    return obj;
+// const countingLetters = (string) => {
+//     const outputObject = {};
+//     for (let i = 0; i < string.length; i++) {
+//         outputObject[string[i]] = string.split(string[i]).length - 1;
+//     }
+//     return outputObject;
+// }
+
+// Pedros solution
+
+const countingLetters = (string) => {
+    let runArray = string.split("");
+    const outputObject = {};
+    runArray.forEach(el => {
+        outputObject[el] = outputObject[el] ? (outputObject[el] += 1) : 1;
+    })
+    return outputObject;
 }
 
-console.log('ex 4', countingLetters('tree'));
-console.log('ex 4', countingLetters('awesomeness'));
+console.log(countingLetters('tree'));
+console.log(countingLetters('awesomeness'));
 
 // 5.
 
@@ -108,6 +127,10 @@ const changeProgramming = () => {
     programming.isFun = true;
     for (let each in programming.languages) {
         console.log(programming.languages[each]);
+    }
+    console.log();
+    for (let each in programming) {
+        console.log(each);
     }
     console.log();
     for (let each in programming) {

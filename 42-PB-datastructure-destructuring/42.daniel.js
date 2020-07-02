@@ -40,9 +40,9 @@ const bands = {
 
 // unnecessary sh*t on the side
     
-const startsWithVowel = string => {
+const aAnSwitch = string => {
     let firstChar = string[0].toLowerCase();
-    return (firstChar === "a" || firstChar === "e" || firstChar === "i" || firstChar === "o" || firstChar === "u")
+    return (firstChar === "a" || firstChar === "e" || firstChar === "i" || firstChar === "o" || firstChar === "u") ? "n" : "";
 }
 
 const bandsFunc = ({
@@ -52,6 +52,6 @@ const bandsFunc = ({
     genre,
     greatestHit
 }) =>
-    `${name} is a${startsWithVowel(nationality) ? "n" : ""} ${nationality} ${artist}. The musician sings ${genre} and their greatest hit is "${greatestHit}"`;
+    `${name} is a${aAnSwitch(nationality)} ${nationality} ${artist}. The musician sings ${genre} and their greatest hit is "${greatestHit}"`;
 
 console.log(bandsFunc(bands));

@@ -18,24 +18,19 @@ const orders = [{
     }
 ];
 
-// with for of loop
-
-const sumValues = arr => {
-    let sum = 0;
-    for (let each of arr) {
-        sum += each.amount;
-    }
-    return sum; // 1075
-}
-
-// const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-// const sumValues = arr =>
-//     arr.map((value, index) => value = arr[index].amount).reduce(reducer);
-
 // built together with different ressources from the internet
 
-console.log(sumValues(orders));
+// const sumValues = arr =>
+//     arr.map((value, index) => value = arr[index].amount).reduce((accumulator, currentValue) => 
+// accumulator + currentValue);
+
+const sumValues = arr =>
+    orders.reduce(function
+        (previousValue, currentValue) {
+            return currentValue["amount"] + previousValue
+    }, 0);
+
+console.log(sumValues(orders)); // 1075
 
 // 2.
 
@@ -43,7 +38,7 @@ console.log("\n2:");
 
 const arrayOfNumbers = [3, 45, 6, 56, 7, 9];
 
-console.log(arrayOfNumbers.map(item => item + 1));
+console.log(arrayOfNumbers.map(num => num + 1));
 
 // 3.
 
@@ -75,7 +70,7 @@ console.log(filterItems(friends, 'e')); // ["Jenna", "Bleda", "Oliver"];
 console.log("\n5:");
 
 const sum = arr =>
-    arr.reduce((accumulator, currentValue) => accumulator + currentValue);
+    arr.reduce((prev, curr) => prev + curr);
 
 console.log(sum([1, 2, 3, 4, 5])); //returns 15
 console.log(sum([6, 7, 7])); //returns 20

@@ -84,87 +84,92 @@ console.log("\n3: ***BONUS***");
 //   });
 // console.log(clock.start());
 
-// let timer = null;
 
-// class Clock {
-//     constructor() {
-//         this.template = "h:m:s";
-//         this.render = function () {
-//             let date = new Date();
+class Clock {
+    constructor() {
+        this.template = "h:m:s";
+        this.timer;
+    }
+    render () {
+        let date = new Date();
 
-//             let hours = date.getHours();
-//             if (hours < 10) { hours = '0' + hours };
+        let hours = date.getHours();
+        if (hours < 10) {
+            hours = '0' + hours
+        };
 
-//             let mins = date.getMinutes();
-//             if (mins < 10) { mins = '0' + mins };
+        let mins = date.getMinutes();
+        if (mins < 10) {
+            mins = '0' + mins
+        };
 
-//             let secs = date.getSeconds();
-//             if (secs < 10) { secs = '0' + secs };
+        let secs = date.getSeconds();
+        if (secs < 10) {
+            secs = '0' + secs
+        };
 
-//             let output = this.template
-//                 .replace('h', hours)
-//                 .replace('m', mins)
-//                 .replace('s', secs);
+        let output = this.template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
 
-//             console.log(this.template);
-//             console.log(output);
-//         }
-
-//         this.stop = function () {
-//             clearInterval(timer);
-//         };
-
-//         this.start = function () {
-//             this.render();
-//             timer = setInterval(this.render, 1000);
-//         };
-//         }
-//     }
-
-// const clock = new Clock;
-// // console.log(clock);
-// clock.start();
-
-    // 4.
-
-    console.log("\n4:")
-
-    class TV {
-        constructor(brand, channel = 1, volume = 50) {
-            this.brand = brand;
-            this.channel = channel;
-            this.volume = volume;
-            this.chChannel = function () {
-                this.channel = Math.round(Math.random() * 49 + 1);
-            }
-            this.inVol = function() {
-                if (this.volume < 100) {
-                    this.volume++;
-                    return `${brand} at channel ${this.channel}, volume ${this.volume}`;
-                } else {
-                    return `Your ${this.brand}  TV is at max. volume!`;
-                }
-            };
-            this.deVol = function () {
-                    if (this.volume >= 0) {
-                        this.volume--;
-                        return `${brand} at channel ${this.channel}, volume ${this.volume}`;
-                    } else {
-                        return `Your ${this.brand}  TV is at min. volume!`;
-                    }
-            };
-            this.status = function () {
-                return `${brand} at channel ${this.channel}, volume ${this.volume}`;
-            }
-        }
-
+        console.log(output);
     }
 
-    const myTV = new TV("Telefunken");
-    console.log(myTV);
+    stop () {
+        clearInterval(this.timer);
+    };
 
-    myTV.chChannel();
-    console.log(myTV.status());
+    start () {
+        this.timer = setInterval(this.render.bind(this), 1000);
+    };
+}
 
-    console.log(myTV.deVol());
-    console.log(myTV.inVol());
+
+let clock = new Clock({template: 'h:m:s'});
+// console.log(clock);
+clock.start();
+
+// 4.
+
+console.log("\n4:")
+
+class TV {
+    constructor(brand, channel = 1, volume = 50) {
+        this.brand = brand;
+        this.channel = channel;
+        this.volume = volume;
+        this.chChannel = function () {
+            this.channel = Math.round(Math.random() * 49 + 1);
+        }
+        this.inVol = function () {
+            if (this.volume < 100) {
+                this.volume++;
+                return `${brand} at channel ${this.channel}, volume ${this.volume}`;
+            } else {
+                return `Your ${this.brand}  TV is at max. volume!`;
+            }
+        };
+        this.deVol = function () {
+            if (this.volume >= 0) {
+                this.volume--;
+                return `${brand} at channel ${this.channel}, volume ${this.volume}`;
+            } else {
+                return `Your ${this.brand}  TV is at min. volume!`;
+            }
+        };
+        this.status = function () {
+            return `${brand} at channel ${this.channel}, volume ${this.volume}`;
+        }
+    }
+
+}
+
+const myTV = new TV("Telefunken");
+console.log(myTV);
+
+myTV.chChannel();
+console.log(myTV.status());
+
+console.log(myTV.deVol());
+console.log(myTV.inVol());

@@ -2,23 +2,48 @@ import "../styles/main.scss";
 import "babel-polyfill"
 
 const modal = document.getElementById("myModal");
-let promiseOfModal = new Promise(function (resolve) {
-    window.setTimeout(function () {
-        resolve(modal)
-    }, (1000 * 60));
-});
-
-promiseOfModal.then(function(val) {
-    console.log("User has been on the page for 60 seconds");
-    val.style.display = "block";
-})
 
 modal.addEventListener("click", (e) => {
-    switch(e.target.className) {
+    switch (e.target.className) {
         case "close":
         case "modal":
-        modal.style.display = "none"
-        break;
+            modal.style.display = "none"
+            break;
     }
 })
 
+// 1. converted with async && await
+
+const delayPromise = (ms, output) =>
+    new Promise(resolve => setTimeout(() => resolve(output), ms));
+
+const asynchFunc = async () => {
+    try {
+        let foo = await delayPromise(1000, modal);
+        foo.style.display = "block";
+    } catch (err) {
+        console.log(err);
+    }
+}
+asynchFunc();
+
+// 2. 
+
+const continueBtn = document.querySelector("#continue");
+
+/* This task is pointless and stupid
+const hoverFunc = async () => {
+    let foo = await delayPromise(200, continueBtn);
+    return foo.style.backgroundColor = "blue";
+}
+
+continueBtn.addEventListener("animationend", hoverFunc());
+
+*/
+
+// 3.
+continueBtn.addEventListener("animationend", () => {
+    continueBtn.style.backgroundColor = "blue";
+    alert("continue to subscription");
+    return "";
+})
